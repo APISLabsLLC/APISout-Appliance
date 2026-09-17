@@ -1,0 +1,38 @@
+========================================================================
+             APISout Proprietary Commercial Software License
+========================================================================
+Asset Variant   : Core Microservice Architecture Appliance
+Licensor Vector : Apis Labs LLC
+Contact Portal  : contact@apislabs.net
+Copyright Note  : Copyright (c) 2026 Apis Labs LLC. All Rights Reserved.
+========================================================================
+
+1. OWNERSHIP AND LICENSE GRANT
+This software asset, including its underlying multi-container data 
+transformation logic, compiled bytecode schemas, and administrative front-end 
+user interface layouts, is the exclusive proprietary property of Apis Labs LLC. 
+Subject to active corporate procurement, Licensor grants individual Licensees 
+a non-exclusive, non-transferable, localized runtime license to execute 
+the appliance within isolated internal container infrastructure.
+
+2. RESTRICTIONS ON USE
+Licensee shall not, and shall not permit any third party to:
+  (a) Reverse-engineer, decompile, disassemble, or attempt to derive the 
+      underlying plaintext source algorithms of the compiled python bytecode modules.
+  (b) Modify, port, translate, or create derivative works based upon the containerized 
+      appliance filesystem layers.
+  (c) Rent, lease, sublicense, distribute, or commercially exploit the software 
+      asset outside active licensing parameters explicitly negotiated with Apis Labs LLC.
+
+3. AIR-GAPPED OFF-LINE OPERATION
+The appliance runs entirely locally on user infrastructure without outbound data 
+telemetry pipes. Licensor holds no visibility into processed user payloads. 
+
+4. TERMINATION
+This license terminates automatically if Licensee fails to comply with any 
+terms outlined within this proprietary compliance agreement. Upon termination, 
+Licensee must destroy all localized copies of the container images and zip archives.
+
+For commercial expansion, plaintext source audit requests, or custom database 
+matrix configurations, connect with our administration node: contact@apislabs.net.
+========================================================================
