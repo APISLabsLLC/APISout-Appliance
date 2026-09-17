@@ -19,6 +19,29 @@ SYSTEM REQUIREMENTS:
 
 ---
 
+[CRITICAL ENVIRONMENT PREREQUISITES]
+
+Before executing any engine commands, your host computer must have a functional 
+container virtualization engine installed and running in the background. If 
+your terminal returns a 'command not recognized' error, initialize your 
+subsystem using the appropriate checklist below:
+
+For Microsoft Windows Server / Windows 10 & 11:
+1. Download the executable bundle from: https://docker.com
+2. Run the installer and ensure the WSL 2 backend infrastructure feature is enabled.
+3. Launch the Docker Desktop application from your Windows Start Menu.
+4. Wait until the status light in the lower-left corner of the dashboard turns solid Green.
+
+For Apple macOS:
+1. Download and install Docker Desktop for Mac (select the Intel or Apple Silicon build).
+2. Launch Docker from your Applications folder and allow the engine daemon to initialize.
+
+For Enterprise Linux:
+1. Install the native Docker engine via your system package manager.
+2. Verify the system service controller is active by running: sudo systemctl start docker
+
+---
+
 [DEPLOYMENT INSTRUCTIONS] 2-Step Local Installation Sequence
 
 Follow this terminal sequence exactly to load and spin up the complete
@@ -26,19 +49,25 @@ APISout standalone appliance on your corporate server network mesh:
 
 Step 1: Load the Pre-Compiled Binary Image Layers into Your Registry
 ------------------------------------------------------------------------
-Execute the native Docker recovery command to unpack the filesystem grid:
+Open your system terminal application environment (PowerShell on Windows, 
+or Terminal on macOS/Linux), navigate inside this unzipped directory folder 
+tree path, and execute the native Docker recovery command to unpack the 
+filesystem grid:
 
-  sudo docker load -i apisout-appliance-v1.0.0.tar.gz
+  docker load -i apisout-appliance-v1.0.0.tar.gz
 
 Verify that the image is successfully registered under your repository list 
-by running 'sudo docker images'. You will see 'apislabs/apisout:1.0.0'.
+by running 'docker images'. You will see 'apislabs/apisout:1.0.0'.
 
 
 Step 2: Initialize the Standalone Production Microservice Container
 ------------------------------------------------------------------------
 Execute this run string to map the internal ports and spin up the container:
 
-  sudo docker run -d -p 9001:9001 --restart always --name apisout_core apislabs/apisout:1.0.0
+  docker run -d -p 9001:9001 --restart always --name apisout_core apislabs/apisout:1.0.0
+
+(Note: Linux enterprise hosts may require prepending 'sudo' depending on local system 
+group permissions mapping rules).
 
 The application container is now permanently active in the background.
 
@@ -53,7 +82,7 @@ port (such as 8080 or 80) without modifying internal appliance code.
 To override, adjust the left-hand side of the port flag (-p [HOST]:[CONTAINER]) 
 during initialization:
 
-  sudo docker run -d -p 8080:9001 --restart always --name apisout_core apislabs/apisout:1.0.0
+  docker run -d -p 8080:9001 --restart always --name apisout_core apislabs/apisout:1.0.0
 
 Following this re-mapping, the administrative panel will resolve cleanly at 
 the custom designated port: http://localhost:8080
